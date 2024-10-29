@@ -10,7 +10,7 @@ pipeline {
         stage('Clone') {
             steps {
                 timeout(time: 2, unit: 'MINUTES'){
-                    git branch: 'main', credentialsId: '', url: ''
+                    git branch: 'main', credentialsId: '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', url: 'https://github.com/haelMC/trabajitos.git'
                 }
             }
         }
