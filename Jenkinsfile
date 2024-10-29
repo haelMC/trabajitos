@@ -25,7 +25,7 @@ pipeline {
         stage('Test') {
             steps {
                 timeout(time: 8, unit: 'MINUTES'){
-                    // Se cambia <testsss> por <install> para que se genere el reporte de jacoco
+                    // Se cambia <testsss> por <install> para que se genere 
                     sh "mvn clean install -f pom.xml"
                 }
             }
