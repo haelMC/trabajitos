@@ -33,7 +33,7 @@ pipeline {
         stage('Sonar') {
             steps {
                 timeout(time: 4, unit: 'MINUTES'){
-                    withSonarQubeEnv('camote'){
+                    withSonarQubeEnv('Sonarqube'){
                         sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar -Pcoverage -f pom.xml"
                     }
                 }
@@ -56,6 +56,7 @@ pipeline {
 					echo "mvn spring-boot:run -f pom.xml"
                 }
                 //echo "mvn spring-boot:run -f SysAsistenciaAn/pom.xml"
+                 //echo "mvn spring-boot:run -f SysAsistenciaAn/pom.xml"
             }
         }
     }
