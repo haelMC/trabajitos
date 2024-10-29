@@ -18,7 +18,7 @@ pipeline {
             steps {
                 timeout(time: 8, unit: 'MINUTES'){
 		    // sh "mvn clean package -f SysAsistenciaAn/pom.xml"
-                    sh "mvn -DskipTests clean package -f SysAsistenciaAn/pom.xml"
+                    sh "mvn -DskipTests clean package -f pom.xml"
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 timeout(time: 8, unit: 'MINUTES'){
                     // Se cambia <test> por <install> para que se genere el reporte de jacoco
-                    sh "mvn clean install -f SysAsistenciaAn/pom.xml"
+                    sh "mvn clean install -f pom.xml"
                 }
             }
         }
@@ -53,7 +53,7 @@ pipeline {
             steps {
 			    timeout(time: 8, unit: 'MINUTES'){
 					// Ejecutar mvn spring-boot:run
-					echo "mvn spring-boot:run -f SysAsistenciaAn/pom.xml"
+					echo "mvn spring-boot:run -f pom.xml"
                 }
                 //echo "mvn spring-boot:run -f SysAsistenciaAn/pom.xml"
             }
